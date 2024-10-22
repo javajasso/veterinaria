@@ -27,6 +27,8 @@
                 <h3 class="mt-4"><strong>Visión:</strong></h3>
                 <p class="text-justify">Entra en nuestra visión para el año 2029, donde nos visualizamos como la clínica veterinaria líder en ofrecer atención integral y personalizada para el bienestar de cada mascota.</p>
               </div>
+
+              
               <!-- end of text-container -->
             </div>
             <!-- end of col -->
@@ -47,6 +49,26 @@
       <!-- end of col -->
     </div>
     <!-- end of row -->
+
+    <h3 style="text-align: center;">Conoce nuestro centro de atención veterinaria ubicado en:</h3>
+    <p style="text-align: center;">Avenida Jose Alfredo Jimenez #49, Dolores Hidalgo, Gto.</p>
+
+              <google-map style="text-align: center;" height="450px"
+                          width="1000px"
+                          [center]="center"
+                          [zoom]="zoom"
+                          (mapClick)="moveMap($event)"
+                          (mapMousemove)="move($event)"
+              >
+              <map-marker *ngFor="let position of markerPositions"
+                          [position]="position"
+                          [options]="{ title: 'Ubicación específica' }"
+                          >
+                          </map-marker>
+              </google-map>
+
+              <div> Latitude: {{display?.lat}}</div>
+              <div> Longitude: {{display?.lng}}</div>
   </div>
   <!-- end of container -->
   
