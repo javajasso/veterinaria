@@ -1,4 +1,4 @@
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -33,39 +33,46 @@ import { VeterinarioSesionComponent } from './components/vistas/veterinario-sesi
 import { AgendarCitaComponent } from './components/formularios/agendarcita/agendarcita.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 
-@NgModule({ declarations: [
-        AppComponent,
-        LoginComponent,
-        SignupComponent,
-        IndexComponent,
-        NavbarComponent,
-        FooterComponent,
-        NotFoundComponent,
-        DeniedComponent,
-        SearchComponent,
-        NosotrosComponent,
-        ReestablecerContComponent,
-        VerifyComponent,
-        VeterinarioComponent,
-        VeterinariosComponent,
-        MascotasComponent,
-        ClienteSesionComponent,
-        PerfilMascotaComponent,
-        VeterinarioSesionComponent,
-        AgendarCitaComponent
-    ],
-    bootstrap: [AppComponent], imports: [BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        ToastrModule.forRoot(),
-        SweetAlert2Module,
-        BreadcrumbModule,
-        MatSlideToggleModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatIconModule,
-        FormsModule,
-        ReactiveFormsModule,
-        CommonModule,
-        GoogleMapsModule], providers: [{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { floatLabel: 'always' } }, provideHttpClient(withInterceptorsFromDi())] })
+@NgModule({
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    SignupComponent,
+    IndexComponent,
+    NavbarComponent,
+    FooterComponent,
+    NotFoundComponent,
+    DeniedComponent,
+    SearchComponent,
+    NosotrosComponent,
+    ReestablecerContComponent,
+    VerifyComponent,
+    VeterinarioComponent,
+    VeterinariosComponent,
+    MascotasComponent,
+    ClienteSesionComponent,
+    PerfilMascotaComponent,
+    VeterinarioSesionComponent,
+    AgendarCitaComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    SweetAlert2Module,
+    BreadcrumbModule,
+    MatSlideToggleModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule,
+    GoogleMapsModule
+  ],
+  providers: [{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {floatLabel: 'always'}}],
+  bootstrap: [AppComponent]
+})
 export class AppModule { }
