@@ -1,3 +1,4 @@
+<script type="text/javascript"  src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <div class="spinner-container" *ngIf="loader">
   <div
     class="spinner-grow text-primary"
@@ -71,5 +72,12 @@
               <div> Longitude: {{display?.lng}}</div>
   </div>
   <!-- end of container -->
+<google-map width="800" height="600" [center]="position">
+  <map-marker
+    [position]="position"
+    [label]="label"
+    [title]="title">
+  </map-marker>
+</google-map>
   
   <div style="height: 50px;"></div> <!-- Espacio entre el footer y el card -->
